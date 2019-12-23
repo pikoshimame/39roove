@@ -49,6 +49,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/contentful',
+    '~/plugins/vue-js-modal',
+    '~/plugins/vue-observe-visibility'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -59,7 +62,38 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/dotenv',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/markdownit',
+    'vue-scrollto/nuxt',
   ],
+  'google-analytics': {
+    id: '' // FIXME: idを入れる
+  },
+  markdownit: {
+    injected: true
+  },
+  /**
+   * Polyfills configuration
+   */
+  polyfill: {
+    features: [
+      {
+        require: 'intersection-observer',
+        detect: () => 'IntersectionObserver' in window,
+      },
+    ],
+  },
+  /**
+   * Style-resources module configuration
+   */
+  styleResources: {
+    scss: [
+      '~/assets/scss/_variables.scss',
+    ],
+  },
   /*
   ** Build configuration
   */
@@ -78,11 +112,6 @@ export default {
         })
       }
     }
-  },
-  plugins: ['~/plugins/contentful', '~/plugins/vue-js-modal'],
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/google-analytics', '@nuxtjs/pwa'],
-  'google-analytics': {
-    id: '' // FIXME: idを入れる
   },
   workbox: {
     runtimeCaching: [

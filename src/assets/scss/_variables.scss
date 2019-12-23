@@ -1,0 +1,73 @@
+$color-primary: #fe528c;
+$color-secondary: #b89031;
+$color-black: #000;
+$color-gray-2: #252525;
+$color-gray-14: #e4e4e4;
+$color-white: #fff;
+
+$colors: (
+  background: (
+    black: $color-black,
+    extra-dark-gray: $color-gray-2,
+    white: $color-gray-14
+  ),
+  text: (
+    primary: $color-primary,
+    secondary: $color-secondary,
+    black: $color-gray-2,
+    white: $color-gray-14
+  ),
+  border: (
+    primary: $color-primary,
+    secondary: $color-secondary,
+    white: $color-gray-14
+  )
+);
+@function color($keys...) {
+  $map: $colors;
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+$font-primary: 'Alata', sans-serif;
+$font-secondary: 'Noto Sans JP', sans-serif;
+
+// メディアクエリ取得
+$width-extra-small: 320px;
+$width-small: 375px;
+$width-medium: 640px;
+$width-large: 1024px;
+$mq-breakpoints: (
+  'extra-small': $width-extra-small,
+  'small': $width-small,
+  'medium': $width-medium,
+  'large': $width-large,
+);
+@mixin mq($breakpoint: small) {
+  @media screen and (min-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+// 画像のRetina対応
+$retina: (
+  '2x': 2,
+  '3x': 3,
+);
+@mixin retina-background-image($file, $type) {
+  background-image: url($file + '.' + $type);
+  @each $key, $ratio in $retina {
+    @media (-webkit-device-pixel-ratio: #{$ratio}), (min-resolution: #{$ratio}dppx) {
+      background-image: url($file + '@' + $key + '.' + $type);
+    }
+  }
+}
+// 画像のRetina対応（指定した倍率のみ）
+@mixin retina-background-image-specified($file, $type, $ratio) {
+  background-image: url($file + '.' + $type);
+  @media (-webkit-device-pixel-ratio: #{map-get($retina, $ratio)}), (min-resolution: #{$ratio}dppx) {
+    background-image: url($file + '@' + $ratio + '.' + $type);
+  }
+}

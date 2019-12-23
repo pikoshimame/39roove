@@ -1,0 +1,26 @@
+<template>
+  <button
+    @click="$emit('click', $event.target.value)"
+    class="button-close"
+  >
+    <img src="~/assets/icons/close.svg" alt="">
+  </button>
+</template>
+
+<script>
+export default {
+  name: 'Close'
+}
+</script>
+
+<style lang="scss" scoped>
+.button-close {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+</style>
