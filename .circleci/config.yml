@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.18.0
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: npm install
+
+      - run: npm --prefix ./functions install ./functions
+
+      - run: echo CTF_SPACE_ID=$CTF_SPACE_ID >> src/.env
+
+      - run: echo CTF_CDA_ACCESS_TOKEN=$CTF_CDA_ACCESS_TOKEN >> src/.env
+
+      - run: npm run setup
+
+      - run: ./node_modules/.bin/firebase use default
+
+      - run: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
