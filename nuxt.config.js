@@ -16,16 +16,16 @@ export default {
       { hid: 'description', name: 'description', content: '39rooveは、ボカロ曲を主軸に、出演者全員でGROOVE（グルーヴ）を作っていくイベントです。GROOVE、それは言葉にできない感覚！' },
       { itemprop: 'name', content: '39roove オフィシャルサイト' },
       { itemprop: 'description', content: '39rooveは、ボカロ曲を主軸に、出演者全員でGROOVE（グルーヴ）を作っていくイベントです。GROOVE、それは言葉にできない感覚！' },
-      { itemprop: 'itemprop', content: 'https://39roove.com/ogp.jpg' },
+      { itemprop: 'itemprop', content: 'https://39roove.com/ogp.png' },
       { property: 'og:url', content: 'https://39roove.com' },
       { property: 'og:type', content: 'website' },
       { property: 'og:title', content: '39roove オフィシャルサイト' },
       { property: 'og:description', content: '39rooveは、ボカロ曲を主軸に、出演者全員でGROOVE（グルーヴ）を作っていくイベントです。GROOVE、それは言葉にできない感覚！' },
-      { property: 'og:image', content: 'https://39roove.com/ogp.jpg' },
+      { property: 'og:image', content: 'https://39roove.com/ogp.png' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: '39roove オフィシャルサイト' },
       { name: 'twitter:description', content: '39rooveは、ボカロ曲を主軸に、出演者全員でGROOVE（グルーヴ）を作っていくイベントです。GROOVE、それは言葉にできない感覚！' },
-      { name: 'twitter:image', content: 'https://39roove.com/summary_large_image.jpg' }
+      { name: 'twitter:image', content: 'https://39roove.com/summary_large_image.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -70,7 +70,7 @@ export default {
     'vue-scrollto/nuxt',
   ],
   'google-analytics': {
-    id: '' // FIXME: idを入れる
+    id: 'UA-155137211-1'
   },
   markdownit: {
     injected: true
