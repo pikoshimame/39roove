@@ -4,6 +4,7 @@
     name="modal"
     width="100%"
     height="auto"
+    :reset="true"
     :scrollable="true"
   >
     <div class="contents">
@@ -70,11 +71,11 @@ export default {
     background: none;
     border-radius: 0;
     box-shadow: none;
-    padding: 12px;
+    padding: 12px 12px 120px;
     pointer-events: none;
 
     @include mq(small) {
-      padding: 24px;
+      padding: 24px 24px 120px;
     }
   }
 
