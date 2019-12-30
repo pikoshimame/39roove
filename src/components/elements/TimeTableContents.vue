@@ -95,7 +95,7 @@ export default {
             padding-right: 20px;
           }
 
-          @include mq(small) {
+          @include mq(medium) {
             padding-right: 28px;
           }
         }
