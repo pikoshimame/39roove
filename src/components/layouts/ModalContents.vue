@@ -44,7 +44,7 @@ export default {
   computed: {
     profile() {
       return {
-        ...this.$store.state.modal.profile,
+        ...this.$store.state.modal,
         imagePath: this.$store.getters['modal/imagePath']
       }
     },
