@@ -61,7 +61,8 @@
 export default {
   name: 'NaviList',
   methods: {
-    scrollStart() {
+    scrollStart(el) {
+      this.$ga.event('navigation', 'click', el.id);
       this.$emit('click');
     }
   }
