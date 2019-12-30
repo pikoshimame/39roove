@@ -44,8 +44,11 @@ export default {
   computed: {
     profile() {
       return {
-        ...this.$store.state.modal,
-        imagePath: this.$store.getters['modal/imagePath']
+        name: this.$store.state.modal.name,
+        credit: this.$store.state.modal.credit,
+        imagePath: this.$store.getters['modal/imagePath'],
+        text: this.$store.getters['modal/textHtml'],
+        twitter: this.$store.state.modal.twitter
       }
     },
   },
@@ -121,6 +124,20 @@ export default {
       font-size: 1.4rem;
       line-height: 1.5;
       padding-top: 24px;
+
+      /deep/ p {
+        & + p {
+          padding-top: 12px;
+        }
+      }
+
+      /deep/ a {
+        color: color(text, white);
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
 
     > .twitter {

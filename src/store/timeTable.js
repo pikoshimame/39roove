@@ -1,10 +1,25 @@
 import contentful from '~/plugins/contentful';
+import MarkdownIt from 'markdown-it';
 const client = contentful.createClient();
+const md = new MarkdownIt({
+  html: true,
+  breaks: true,
+  linkify: true
+});
 
 export const state = () => ({
   main: '',
   lounge: ''
 });
+
+export const getters = {
+  timeTableHtml(state) {
+    return {
+      main: md.render(state.main),
+      lounge: md.render(state.lounge)
+    }
+  }
+};
 
 export const mutations = {
   setTimeTable (state, {main, lounge}) {

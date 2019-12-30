@@ -3,13 +3,13 @@
     <div class="item">
       <time-table-contents
         title="Main Floor"
-        :time-table="main"
+        :time-table="timeTable.main"
       />
     </div>
     <div class="item">
       <time-table-contents
         title="Lounge Floor"
-        :time-table="lounge"
+        :time-table="timeTable.lounge"
       />
     </div>
   </div>
@@ -27,14 +27,6 @@ export default {
     timeTable: {
       type: Object,
       required: true
-    }
-  },
-  computed: {
-    main() {
-      return this.$md.render(this.timeTable.main);
-    },
-    lounge() {
-      return this.$md.render(this.timeTable.lounge);
     }
   }
 }

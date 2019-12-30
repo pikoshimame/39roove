@@ -66,14 +66,10 @@ export default {
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
-    '@nuxtjs/markdownit',
     'vue-scrollto/nuxt',
   ],
   'google-analytics': {
     id: 'UA-155137211-1'
-  },
-  markdownit: {
-    injected: true
   },
   /**
    * Polyfills configuration

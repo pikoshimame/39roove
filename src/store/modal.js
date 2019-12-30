@@ -1,3 +1,10 @@
+import MarkdownIt from 'markdown-it';
+const md = new MarkdownIt({
+  html: true,
+  breaks: true,
+  linkify: true
+});
+
 export const state = () => ({
   name: '',
   credit: '',
@@ -18,6 +25,9 @@ export const getters = {
       x2: `${state.image.path}${type}${size * 2}&fit=scale`,
       x3: `${state.image.path}${type}${size * 3}&fit=scale`,
     };
+  },
+  textHtml(state) {
+    return md.render(state.text);
   }
 };
 

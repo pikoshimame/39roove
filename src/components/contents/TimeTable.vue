@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     timeTable() {
-      return this.$store.state.timeTable;
+      return this.$store.getters['timeTable/timeTableHtml'];
     },
   }
 }
