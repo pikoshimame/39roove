@@ -33,6 +33,7 @@ export default {
   color: color(text, white);
   font-size: 2.4rem;
   line-height: 1.5;
+  margin: 0;
   padding: 0;
   cursor: pointer;
   outline: none;

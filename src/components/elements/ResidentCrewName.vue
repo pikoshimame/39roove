@@ -54,6 +54,7 @@ export default {
   font-size: 1.4rem;
   text-align: right;
   line-height: 1.5;
+  margin: 0;
   padding: 0;
   cursor: pointer;
   outline: none;

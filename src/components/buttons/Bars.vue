@@ -19,6 +19,7 @@ export default {
   border: none;
   width: 32px;
   height: 18px;
+  margin: 0;
   padding: 0;
   cursor: pointer;
   outline: none;
