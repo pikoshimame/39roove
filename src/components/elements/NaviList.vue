@@ -1,29 +1,70 @@
 <template>
   <ul class="navi-list">
     <li class="item">
-      <nuxt-link to v-scroll-to="'#next'">Next</nuxt-link>
+      <nuxt-link
+        to
+        v-scroll-to="{
+          el: '#next',
+          onStart: scrollStart
+        }"
+      >Next</nuxt-link>
     </li>
     <li class="item">
-      <nuxt-link to v-scroll-to="'#concept'">Concept</nuxt-link>
+      <nuxt-link
+        to
+        v-scroll-to="{
+          el: '#concept',
+          onStart: scrollStart
+        }"
+      >Concept</nuxt-link>
     </li>
     <li class="item">
-      <nuxt-link to v-scroll-to="'#entrancefee'">Entrance Fee</nuxt-link>
+      <nuxt-link
+        to
+        v-scroll-to="{
+          el: '#entrancefee',
+          onStart: scrollStart
+        }"
+      >Entrance Fee</nuxt-link>
     </li>
     <li class="item">
-      <nuxt-link to v-scroll-to="'#location'">Location</nuxt-link>
+      <nuxt-link
+        to
+        v-scroll-to="{
+          el: '#location',
+          onStart: scrollStart
+        }"
+      >Location</nuxt-link>
     </li>
     <li class="item">
-      <nuxt-link to v-scroll-to="'#timetable'">Time Table</nuxt-link>
+      <nuxt-link
+        to
+        v-scroll-to="{
+          el: '#timetable',
+          onStart: scrollStart
+        }"
+      >Time Table</nuxt-link>
     </li>
     <li class="item">
-      <nuxt-link to v-scroll-to="'#residentcrew'">Resident Crew</nuxt-link>
+      <nuxt-link
+        to
+        v-scroll-to="{
+          el: '#residentcrew',
+          onStart: scrollStart
+        }"
+      >Resident Crew</nuxt-link>
     </li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'NaviList'
+  name: 'NaviList',
+  methods: {
+    scrollStart() {
+      this.$emit('click');
+    }
+  }
 }
 </script>
 

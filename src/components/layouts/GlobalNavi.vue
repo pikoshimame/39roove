@@ -14,6 +14,7 @@
     />
     <navi-list
       class="list"
+      @click="buttonClick"
       :class="{'-open': isOpen}"
     />
   </nav>
