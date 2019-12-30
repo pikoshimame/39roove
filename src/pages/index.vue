@@ -51,10 +51,6 @@
         <contents-notes />
       </contents-container>
     </div>
-    <to-top
-      :is-show="isVisible"
-      class="totop"
-    />
   </div>
 </template>
 
@@ -67,7 +63,6 @@ import ContentsLocation from '~/components/contents/Location';
 import ContentsTimeTable from '~/components/contents/TimeTable';
 import ContentsResidentCrew from '~/components/contents/ResidentCrew';
 import ContentsNotes from '~/components/contents/Notes';
-import ToTop from '~/components/elements/ToTop';
 
 export default {
   components: {
@@ -78,17 +73,11 @@ export default {
     ContentsLocation,
     ContentsTimeTable,
     ContentsResidentCrew,
-    ContentsNotes,
-    ToTop
-  },
-  data() {
-    return {
-      isVisible: false
-    }
+    ContentsNotes
   },
   methods: {
-    visibilityChanged(isVisible) {
-      this.isVisible = isVisible;
+    visibilityChanged(visibility) {
+      this.$store.commit('contents/setVisibility', visibility);
     }
   }
 }
@@ -99,6 +88,7 @@ export default {
   position: relative;
   padding-top: 650px;
   z-index: 0;
+  overflow: hidden;
 
   > .logo {
     position: fixed;
@@ -144,18 +134,6 @@ export default {
 
     &::before {
       height: 200%;
-    }
-  }
-
-  > .totop {
-    position: fixed;
-    right: 12px;
-    bottom: 12px;
-    z-index: 2;
-
-    @include mq(medium) {
-      right: 24px;
-      bottom: 24px;
     }
   }
 }

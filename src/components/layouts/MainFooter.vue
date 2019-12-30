@@ -30,7 +30,8 @@ export default {
 <style lang="scss" scoped>
 .main-footer {
   position: relative;
-  z-index: 1;
+  z-index: 0;
+  background-color: color(background, extra-dark-gray);
   color: color(text, white);
   font-size: 12px;
   font-family: $font-primary;

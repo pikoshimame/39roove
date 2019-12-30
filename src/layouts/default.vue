@@ -21,21 +21,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 * {
   box-sizing: border-box;
 }
 
 html {
+  background-color: color(background, white);
   font-size: 10px;
 }
 </style>
 
 <style lang="scss" scoped>
 .layout-container {
-  background-color: color(background, white);
   font-family: $font-secondary;
-  overflow: hidden;
 
   &::before {
     content: '';
