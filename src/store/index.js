@@ -6,6 +6,7 @@ export const actions = {
     promises.push(dispatch('residents/fetch'));
     promises.push(dispatch('timeTable/fetch'));
     promises.push(dispatch('discountTweet/fetch'));
+    promises.push(dispatch('illustrations/fetch'));
     promises.push(dispatch('copyright/fetch'));
     await Promise.all(promises);
   }

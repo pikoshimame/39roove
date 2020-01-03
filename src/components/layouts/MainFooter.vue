@@ -6,6 +6,10 @@
       <div class="button">
         <discount-tweet ga-label="footer" />
       </div>
+      <small
+        v-if="illustrations !== ''"
+        class="illustrations"
+      >{{ illustrations }}</small>
       <small class="copyright">{{ copyright }}</small>
     </div>
   </footer>
@@ -20,6 +24,9 @@ export default {
     DiscountTweet
   },
   computed: {
+    illustrations() {
+      return this.$store.state.illustrations.text;
+    },
     copyright() {
       return this.$store.state.copyright.text;
     }
@@ -45,6 +52,11 @@ export default {
 
     > .button {
       padding-bottom: 24px;
+      pointer-events: auto;
+    }
+
+    > .illustrations {
+      padding-bottom: 4px;
       pointer-events: auto;
     }
 
