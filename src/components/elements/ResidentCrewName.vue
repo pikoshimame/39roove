@@ -75,7 +75,7 @@ export default {
       display: block;
       opacity: .8;
       filter: grayscale(100%);
-      transition: opacity,filter .2s;
+      transition: opacity .2s, filter .2s;
     }
   }
 
@@ -83,6 +83,7 @@ export default {
     position: absolute;
     right: 0;
     bottom: -12px;
+    filter: drop-shadow(0px 0px 5px color(background, white));
   }
 }
 </style>
