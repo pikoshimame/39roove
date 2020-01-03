@@ -27,6 +27,7 @@
         class="twitter"
         :href="profile.twitter"
         target="_blank"
+        rel="noopener"
       >
         <img src="~/assets/icons/twitter.svg" alt="Twitter">
       </a>

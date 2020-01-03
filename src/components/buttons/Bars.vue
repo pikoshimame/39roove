@@ -2,6 +2,7 @@
   <button
     @click="$emit('click', $event.target.value)"
     class="button-bars"
+    aria-label="Open Navigation"
   >
     <img src="~/assets/icons/bars.svg" alt="">
   </button>

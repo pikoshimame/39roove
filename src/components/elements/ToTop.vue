@@ -6,7 +6,7 @@
       to
       v-scroll-to="'body'"
     >
-      <img src="~/assets/icons/totop.svg" alt="">
+      <img src="~/assets/icons/totop.svg" alt="トップへ戻る">
     </nuxt-link>
   </transition>
 </template>
