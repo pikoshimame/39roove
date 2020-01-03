@@ -33,10 +33,18 @@ export default {
 
   > .code {
     font-size: 7.2rem;
+
+    @include mq(medium) {
+      font-size: 9.6rem;
+    }
   }
 
   > .text {
     font-size: 4.0rem;
+
+    @include mq(medium) {
+      font-size: 5.6rem;
+    }
   }
 }
 </style>
