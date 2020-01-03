@@ -1,29 +1,12 @@
 <template>
   <div class="layout-container">
-    <global-navi />
     <nuxt />
-    <main-footer />
-    <modal-contents />
   </div>
 </template>
 
-<script>
-import GlobalNavi from '~/components/layouts/GlobalNavi';
-import MainFooter from '~/components/layouts/MainFooter';
-import ModalContents from '~/components/layouts/ModalContents';
-
-export default {
-  components: {
-    GlobalNavi,
-    MainFooter,
-    ModalContents
-  }
-}
-</script>
-
 <style lang="scss" scoped>
 .layout-container {
-  font-family: $font-secondary;
+  font-family: $font-primary;
 
   &::before {
     content: '';
