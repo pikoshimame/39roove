@@ -29,6 +29,7 @@ export default {
   },
   methods: {
     showModal(profile) {
+      this.$ga.event('guests', 'click', profile.name);
       this.$store.commit('modal/setProfile', profile);
       this.$modal.show('modal');
     }

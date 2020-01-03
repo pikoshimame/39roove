@@ -10,6 +10,13 @@
 <script>
 export default {
   name: 'DiscountTweet',
+  props: {
+    gaLabel: {
+      type: String,
+      required: false,
+      default: ''
+    }
+  },
   computed: {
     discountTweet() {
       return this.$store.state.discountTweet;
@@ -17,6 +24,7 @@ export default {
   },
   methods: {
     click() {
+      this.$ga.event('discounttweet', 'click', this.gaLabel);
       const url = window.location.href;
       const text = this.discountTweet.text;
       const hashtags = this.discountTweet.hashtags;

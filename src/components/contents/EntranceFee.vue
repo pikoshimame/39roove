@@ -6,7 +6,7 @@
     />
     <entrance-fee-list />
     <div class="button">
-      <discount-tweet />
+      <discount-tweet ga-label="entrancefee" />
     </div>
   </div>
 </template>

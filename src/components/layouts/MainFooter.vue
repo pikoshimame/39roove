@@ -4,7 +4,7 @@
   >
     <div class="container">
       <div class="button">
-        <discount-tweet />
+        <discount-tweet ga-label="footer" />
       </div>
       <small class="copyright">{{ copyright }}</small>
     </div>
