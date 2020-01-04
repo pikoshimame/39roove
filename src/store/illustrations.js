@@ -15,8 +15,7 @@ export const actions = {
   async fetch({commit}) {
     try {
       const config = {
-        content_type: 'illustrations',
-        order: '-fields.illustrations'
+        content_type: 'illustrations'
       };
       const response = await client.getEntries(config);
       const illustrations = response.items.map((entry) => {
