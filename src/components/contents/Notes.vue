@@ -1,10 +1,12 @@
 <template>
   <ul class="notes-list">
     <li
-      class="item"
       v-for="(notes, index) in notesList"
       :key="index"
-    >{{ notes }}</li>
+      class="item"
+    >
+      <span>{{ notes }}</span>
+    </li>
   </ul>
 </template>
 
@@ -19,9 +21,9 @@ export default {
         '他のお客様のご迷惑となる行為、過度なナンパ行為等は禁止させて頂いております。場合によっては、退場して頂く場合がございます。',
         '貴重品は自己管理でお願いいたします。万が一紛失された場合、こちらでは責任を負いかねますのでご注意下さい。'
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

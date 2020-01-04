@@ -2,8 +2,8 @@
   <dl class="entrancefee-list">
     <div
       v-for="(entranceFee, index) in entrancefeeList"
-      class="item"
       :key="index"
+      class="item"
     >
       <dt>{{ entranceFee.term }}</dt>
       <dd>{{ entranceFee.fee }} <span>(+1Drink {{ entranceFee.drink }})</span></dd>
@@ -33,9 +33,9 @@ export default {
           drink: '￥600'
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

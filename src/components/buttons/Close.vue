@@ -1,16 +1,19 @@
 <template>
   <button
-    @click="$emit('click', $event.target.value)"
     class="button-close"
+    @click="$emit('click', $event.target.value)"
   >
-    <img src="~/assets/icons/close.svg" alt="">
+    <img
+      src="~/assets/icons/close.svg"
+      alt=""
+    >
   </button>
 </template>
 
 <script>
 export default {
   name: 'Close'
-}
+};
 </script>
 
 <style lang="scss" scoped>

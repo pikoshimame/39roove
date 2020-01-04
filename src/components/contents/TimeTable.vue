@@ -25,7 +25,7 @@ export default {
       return this.$store.getters['timeTable/timeTableHtml'];
     },
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

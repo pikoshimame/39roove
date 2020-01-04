@@ -1,7 +1,10 @@
 <template>
   <div class="main-container">
     <h1 class="logo">
-      <img src="~/assets/images/logo.svg" alt="39roove">
+      <img
+        src="~/assets/images/logo.svg"
+        alt="39roove"
+      >
     </h1>
     <error-code :status-code="statusCode" />
   </div>
@@ -26,7 +29,7 @@ export default {
       return (this.error && this.error.statusCode) || 500;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

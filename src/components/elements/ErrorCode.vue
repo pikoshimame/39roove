@@ -1,7 +1,11 @@
 <template>
   <div class="error-code">
-    <p class="code">{{ statusCode }}</p>
-    <p class="text">{{ statusText }}</p>
+    <p class="code">
+      {{ statusCode }}
+    </p>
+    <p class="text">
+      {{ statusText }}
+    </p>
   </div>
 </template>
 
@@ -19,7 +23,7 @@ export default {
       return (this.statusCode === 404) ? 'Not Found' : 'Server Error';
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

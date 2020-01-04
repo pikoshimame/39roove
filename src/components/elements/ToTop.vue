@@ -2,11 +2,14 @@
   <transition name="fade">
     <nuxt-link
       v-show="isShow"
+      v-scroll-to="'body'"
       class="button-totop"
       to
-      v-scroll-to="'body'"
     >
-      <img src="~/assets/icons/totop.svg" alt="トップへ戻る">
+      <img
+        src="~/assets/icons/totop.svg"
+        alt="トップへ戻る"
+      >
     </nuxt-link>
   </transition>
 </template>
@@ -21,7 +24,7 @@ export default {
       default: false
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

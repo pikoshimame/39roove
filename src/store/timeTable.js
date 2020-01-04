@@ -17,28 +17,31 @@ export const getters = {
     return {
       main: md.render(state.main),
       lounge: md.render(state.lounge)
-    }
+    };
   }
 };
 
 export const mutations = {
-  setTimeTable (state, {main, lounge}) {
+  setTimeTable(state, {main, lounge}) {
     state.main = main;
     state.lounge = lounge;
   }
 };
 
 export const actions = {
-  async fetch({ commit }) {
+  async fetch({commit}) {
     try {
-      const response = await client.getEntries({ content_type: 'timeTable'});
-      const timetable = response.items.map(entry => {
+      const config = {
+        content_type: 'timeTable'
+      };
+      const response = await client.getEntries(config);
+      const timetable = response.items.map((entry) => {
         const main = entry.fields['mainFloor'];
         const lounge = entry.fields['loungeFloor'];
         return {
           main,
           lounge
-        }
+        };
       })[0];
       commit('setTimeTable', timetable);
     } catch (e) {

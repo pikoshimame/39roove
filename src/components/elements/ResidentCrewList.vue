@@ -1,9 +1,9 @@
 <template>
   <ul class="residentcrew-list">
     <li
-      class="item"
       v-for="(resident, index) in residents"
       :key="index"
+      class="item"
     >
       <resident-crew-name
         :resident="resident"
@@ -34,7 +34,7 @@ export default {
       this.$modal.show('modal');
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

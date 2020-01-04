@@ -6,16 +6,20 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setResidents (state, residents) {
+  setResidents(state, residents) {
     state.list = residents;
   }
 };
 
 export const actions = {
-  async fetch({ commit }) {
+  async fetch({commit}) {
     try {
-      const response = await client.getEntries({ content_type: 'residents', order: 'fields.order' });
-      const residents = response.items.map(entry => {
+      const config = {
+        content_type: 'residents',
+        order: 'fields.order'
+      };
+      const response = await client.getEntries(config);
+      const residents = response.items.map((entry) => {
         const name = entry.fields['name'];
         const credit = entry.fields['credit'];
         const imageWidth = entry.fields.image.fields.file.details.image.width;

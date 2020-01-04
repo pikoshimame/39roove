@@ -2,57 +2,69 @@
   <ul class="navi-list">
     <li class="item">
       <nuxt-link
-        to
         v-scroll-to="{
           el: '#next',
           onStart: scrollStart
         }"
-      >Next</nuxt-link>
+        to
+      >
+        Next
+      </nuxt-link>
     </li>
     <li class="item">
       <nuxt-link
-        to
         v-scroll-to="{
           el: '#concept',
           onStart: scrollStart
         }"
-      >Concept</nuxt-link>
+        to
+      >
+        Concept
+      </nuxt-link>
     </li>
     <li class="item">
       <nuxt-link
-        to
         v-scroll-to="{
           el: '#entrancefee',
           onStart: scrollStart
         }"
-      >Entrance Fee</nuxt-link>
+        to
+      >
+        Entrance Fee
+      </nuxt-link>
     </li>
     <li class="item">
       <nuxt-link
-        to
         v-scroll-to="{
           el: '#location',
           onStart: scrollStart
         }"
-      >Location</nuxt-link>
+        to
+      >
+        Location
+      </nuxt-link>
     </li>
     <li class="item">
       <nuxt-link
-        to
         v-scroll-to="{
           el: '#timetable',
           onStart: scrollStart
         }"
-      >Time Table</nuxt-link>
+        to
+      >
+        Time Table
+      </nuxt-link>
     </li>
     <li class="item">
       <nuxt-link
-        to
         v-scroll-to="{
           el: '#residentcrew',
           onStart: scrollStart
         }"
-      >Resident Crew</nuxt-link>
+        to
+      >
+        Resident Crew
+      </nuxt-link>
     </li>
   </ul>
 </template>
@@ -66,7 +78,7 @@ export default {
       this.$emit('click');
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

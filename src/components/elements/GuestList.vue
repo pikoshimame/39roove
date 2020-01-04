@@ -2,11 +2,11 @@
   <ul class="guest-list">
     <li
       v-for="(guest, index) in guests"
-      class="item"
       :key="index"
+      class="item"
     >
       <guest-name
-        :guestName='guest.name'
+        :guest-name="guest.name"
         @click="showModal(guest)"
       />
     </li>
@@ -34,7 +34,7 @@ export default {
       this.$modal.show('modal');
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -22,8 +22,8 @@
       height="320"
       frameborder="0"
       style="border:0;"
-      allowfullscreen="">
-    </iframe>
+      allowfullscreen=""
+    />
   </div>
 </template>
 
@@ -40,9 +40,9 @@ export default {
   data() {
     return {
       locationLink: 'http://www.heavysick.co.jp/zero/'
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

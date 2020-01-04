@@ -1,7 +1,10 @@
 <template>
   <div class="main-container">
     <h1 class="logo">
-      <img src="~/assets/images/logo.svg" alt="39roove">
+      <img
+        src="~/assets/images/logo.svg"
+        alt="39roove"
+      >
     </h1>
     <div v-observe-visibility="visibilityChanged">
       <contents-container
@@ -80,7 +83,7 @@ export default {
       this.$store.commit('contents/setVisibility', visibility);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -6,16 +6,20 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setIllustrations (state, illustrations) {
+  setIllustrations(state, illustrations) {
     state.text = illustrations;
   }
 };
 
 export const actions = {
-  async fetch({ commit }) {
+  async fetch({commit}) {
     try {
-      const response = await client.getEntries({ content_type: 'illustrations', order: '-fields.illustrations' });
-      const illustrations = response.items.map(entry => {
+      const config = {
+        content_type: 'illustrations',
+        order: '-fields.illustrations'
+      };
+      const response = await client.getEntries(config);
+      const illustrations = response.items.map((entry) => {
         return entry.fields['illustrations'];
       })[0];
       commit('setIllustrations', illustrations);

@@ -1,17 +1,20 @@
 <template>
   <button
-    @click="$emit('click', $event.target.value)"
     class="button-bars"
     aria-label="Open Navigation"
+    @click="$emit('click', $event.target.value)"
   >
-    <img src="~/assets/icons/bars.svg" alt="">
+    <img
+      src="~/assets/icons/bars.svg"
+      alt=""
+    >
   </button>
 </template>
 
 <script>
 export default {
   name: 'Bars'
-}
+};
 </script>
 
 <style lang="scss" scoped>

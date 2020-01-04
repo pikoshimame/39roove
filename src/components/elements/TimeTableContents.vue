@@ -1,6 +1,9 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div class="timetable-contents">
-    <h3 class="heading">{{ title }}</h3>
+    <h3 class="heading">
+      {{ title }}
+    </h3>
     <div
       v-if="timeTable"
       class="timetable"
@@ -9,7 +12,9 @@
     <p
       v-else
       class="text"
-    >coming soon...</p>
+    >
+      coming soon...
+    </p>
   </div>
 </template>
 
@@ -26,7 +31,7 @@ export default {
       required: true
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

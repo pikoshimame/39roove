@@ -1,5 +1,5 @@
 export const actions = {
-  async nuxtServerInit({ dispatch }) {
+  async nuxtServerInit({dispatch}) {
     const promises = [];
     promises.push(dispatch('next/fetch'));
     promises.push(dispatch('guests/fetch'));

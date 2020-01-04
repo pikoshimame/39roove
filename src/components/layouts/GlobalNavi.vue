@@ -4,18 +4,18 @@
   >
     <button-close
       v-if="isOpen"
-      @click="buttonClick"
       class="close"
+      @click="buttonClick"
     />
     <button-bars
       v-else
-      @click="buttonClick"
       class="bars"
+      @click="buttonClick"
     />
     <navi-list
       class="list"
-      @click="buttonClick"
       :class="{'-open': isOpen}"
+      @click="buttonClick"
     />
     <to-top
       :is-show="contentsVisibility"
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       isOpen: false
-    }
+    };
   },
   computed: {
     contentsVisibility() {
@@ -53,7 +53,7 @@ export default {
       this.isOpen = !this.isOpen;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -18,7 +18,7 @@ export default {
     MainFooter,
     ModalContents
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

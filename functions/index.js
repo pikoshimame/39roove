@@ -1,6 +1,6 @@
 const functions = require('firebase-functions');
 const express = require('express');
-const { Nuxt } = require('nuxt');
+const {Nuxt} = require('nuxt');
 
 const app = express();
 const nuxt = new Nuxt({
@@ -11,6 +11,11 @@ const nuxt = new Nuxt({
   }
 });
 
+/**
+ * @param {Object} req
+ * @param {Object} res
+ * @return {Promise}
+ */
 function handleRequest(req, res) {
   res.set('Cache-Control', 'public, max-age=600, s-maxage=1200');
   return new Promise((resolve, reject) => {

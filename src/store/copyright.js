@@ -6,16 +6,20 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setCopyright (state, copyright) {
+  setCopyright(state, copyright) {
     state.text = copyright;
   }
 };
 
 export const actions = {
-  async fetch({ commit }) {
+  async fetch({commit}) {
     try {
-      const response = await client.getEntries({ content_type: 'copyright', order: '-fields.copyright' });
-      const copyright = response.items.map(entry => {
+      const config = {
+        content_type: 'copyright',
+        order: '-fields.copyright'
+      };
+      const response = await client.getEntries(config);
+      const copyright = response.items.map((entry) => {
         return entry.fields['copyright'];
       })[0];
       commit('setCopyright', copyright);

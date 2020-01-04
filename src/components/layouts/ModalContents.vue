@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <modal
     class="modal-contents"
@@ -12,8 +13,15 @@
         class="close"
         @click="hideModal"
       />
-      <p class="name">{{ profile.name }}</p>
-      <p v-if="profile.credit" class="credit">{{ profile.credit }}</p>
+      <p class="name">
+        {{ profile.name }}
+      </p>
+      <p
+        v-if="profile.credit"
+        class="credit"
+      >
+        {{ profile.credit }}
+      </p>
       <div class="img">
         <img
           :src="profile.imagePath.x1"
@@ -21,7 +29,10 @@
           :alt="profile.name"
         >
       </div>
-      <p class="text" v-html="profile.text"></p>
+      <p
+        class="text"
+        v-html="profile.text"
+      />
       <a
         v-if="profile.twitter"
         class="twitter"
@@ -29,7 +40,10 @@
         target="_blank"
         rel="noopener"
       >
-        <img src="~/assets/icons/twitter.svg" alt="Twitter">
+        <img
+          src="~/assets/icons/twitter.svg"
+          alt="Twitter"
+        >
       </a>
     </div>
   </modal>
@@ -51,7 +65,7 @@ export default {
         imagePath: this.$store.getters['modal/imagePath'],
         text: this.$store.getters['modal/textHtml'],
         twitter: this.$store.state.modal.twitter
-      }
+      };
     },
   },
   methods: {
@@ -59,7 +73,7 @@ export default {
       this.$modal.hide('modal');
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

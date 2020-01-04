@@ -4,7 +4,10 @@
       text="Next"
       class="heading"
     />
-    <time :datetime="datetime" class="datetime">
+    <time
+      :datetime="datetime"
+      class="datetime"
+    >
       <span class="date">{{ date }}</span>
       <span class="time">{{ time }}</span>
     </time>
@@ -43,7 +46,7 @@ export default {
       return this.$store.state.guests.list;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

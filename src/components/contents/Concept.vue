@@ -4,10 +4,18 @@
       text="Concept"
       class="heading"
     />
-    <p class="text -xlarge"><b>VOCALOID × GROOVE</b></p>
-    <p class="text">39rooveは、ボカロ曲を主軸に、出演者全員でGROOVE（グルーヴ）を作っていくイベントです。</p>
-    <p class="text">知っている大好きなボカロ曲、まだ出会ったことのなかったボカロ曲、そんな曲を聴きながらフロアで一緒にGROOVEを感じてみませんか！？</p>
-    <p class="text -large"><b>GROOVE、それは言葉にできない感覚！</b></p>
+    <p class="text -xlarge">
+      <b>VOCALOID × GROOVE</b>
+    </p>
+    <p class="text">
+      39rooveは、ボカロ曲を主軸に、出演者全員でGROOVE（グルーヴ）を作っていくイベントです。
+    </p>
+    <p class="text">
+      知っている大好きなボカロ曲、まだ出会ったことのなかったボカロ曲、そんな曲を聴きながらフロアで一緒にGROOVEを感じてみませんか！？
+    </p>
+    <p class="text -large">
+      <b>GROOVE、それは言葉にできない感覚！</b>
+    </p>
   </div>
 </template>
 
@@ -19,7 +27,7 @@ export default {
   components: {
     ContentsHeading
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

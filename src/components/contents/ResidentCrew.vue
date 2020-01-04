@@ -25,7 +25,7 @@ export default {
       return this.$store.state.residents.list;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

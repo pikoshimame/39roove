@@ -8,7 +8,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setNext (state, {date, time, datetime}) {
+  setNext(state, {date, time, datetime}) {
     state.date = date;
     state.time = time;
     state.datetime = datetime;
@@ -16,10 +16,14 @@ export const mutations = {
 };
 
 export const actions = {
-  async fetch({ commit }) {
+  async fetch({commit}) {
     try {
-      const response = await client.getEntries({ content_type: 'next', order: '-fields.datetime' });
-      const next = response.items.map(entry => {
+      const config = {
+        content_type: 'next',
+        order: '-fields.datetime'
+      };
+      const response = await client.getEntries(config);
+      const next = response.items.map((entry) => {
         const date = entry.fields['date'];
         const time = entry.fields['time'];
         const datetime = entry.fields['datetime'];
@@ -27,7 +31,7 @@ export const actions = {
           date,
           time,
           datetime
-        }
+        };
       })[0];
       commit('setNext', next);
     } catch (e) {

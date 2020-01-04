@@ -23,7 +23,7 @@ export default {
     EntranceFeeList,
     DiscountTweet
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

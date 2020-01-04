@@ -31,7 +31,7 @@ export default {
       return this.$store.state.copyright.text;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
