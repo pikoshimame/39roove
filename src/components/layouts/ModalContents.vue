@@ -29,7 +29,7 @@
           :alt="profile.name"
         >
       </div>
-      <p
+      <div
         class="text"
         v-html="profile.text"
       />
