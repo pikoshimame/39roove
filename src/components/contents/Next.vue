@@ -17,8 +17,15 @@
       class="subheading"
     />
     <guest-list
+      v-if="guests.length !== 0"
       :guests="guests"
     />
+    <p
+      v-else
+      class="text"
+    >
+      coming soon...
+    </p>
   </div>
 </template>
 
@@ -79,6 +86,12 @@ export default {
 
   > .subheading {
     padding-bottom: 20px;
+  }
+
+  > .text {
+    color: color(text, white);
+    font-size: 1.4rem;
+    opacity: .5;
   }
 }
 </style>
