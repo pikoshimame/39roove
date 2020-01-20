@@ -33,7 +33,9 @@ export const actions = {
           datetime
         };
       })[0];
-      commit('setNext', next);
+      if (next !== undefined) {
+        commit('setNext', next);
+      }
     } catch (e) {
       console.error(e);
     }

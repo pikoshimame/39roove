@@ -28,7 +28,9 @@ export const actions = {
           hashtags
         };
       })[0];
-      commit('setDiscountTweet', discountTweet);
+      if (discountTweet !== undefined) {
+        commit('setDiscountTweet', discountTweet);
+      }
     } catch (e) {
       console.error(e);
     }

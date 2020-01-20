@@ -21,7 +21,9 @@ export const actions = {
       const illustrations = response.items.map((entry) => {
         return entry.fields['illustrations'];
       })[0];
-      commit('setIllustrations', illustrations);
+      if (illustrations !== undefined) {
+        commit('setIllustrations', illustrations);
+      }
     } catch (e) {
       console.error(e);
     }

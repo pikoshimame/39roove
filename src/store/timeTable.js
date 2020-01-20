@@ -43,7 +43,9 @@ export const actions = {
           lounge
         };
       })[0];
-      commit('setTimeTable', timetable);
+      if (timetable !== undefined) {
+        commit('setTimeTable', timetable);
+      }
     } catch (e) {
       console.error(e);
     }

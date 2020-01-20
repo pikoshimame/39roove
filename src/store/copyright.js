@@ -22,7 +22,9 @@ export const actions = {
       const copyright = response.items.map((entry) => {
         return entry.fields['copyright'];
       })[0];
-      commit('setCopyright', copyright);
+      if (copyright !== undefined) {
+        commit('setCopyright', copyright);
+      }
     } catch (e) {
       console.error(e);
     }
