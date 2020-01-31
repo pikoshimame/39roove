@@ -45,17 +45,29 @@ export default {
     height: 100%;
     z-index: -1;
     transform: translateX(-50%) rotate(-6deg);
+
+    @include dark {
+      background-color: rgba(color(background, dark-gray), .8);
+    }
   }
 
   &.-clear {
     &::before {
       background-color: rgba(color(background, white), .6);
+
+      @include dark {
+        background-color: rgba(color(background, dark-gray), .6);
+      }
     }
   }
 
   &.-dark {
     &::before {
-      background-color: color(background, extra-dark-gray);
+      background-color: color(background, dark-gray);
+
+      @include dark {
+        background-color: color(background, extra-dark-gray);
+      }
     }
   }
 

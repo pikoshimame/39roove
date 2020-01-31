@@ -1,10 +1,7 @@
 <template>
   <div class="main-container">
     <h1 class="logo">
-      <img
-        src="~/assets/images/logo.svg"
-        alt="39roove"
-      >
+      <heading-logo />
     </h1>
     <div v-observe-visibility="visibilityChanged">
       <contents-container
@@ -58,6 +55,7 @@
 </template>
 
 <script>
+import HeadingLogo from '~/components/elements/HeadingLogo';
 import ContentsContainer from '~/components/elements/ContentsContainer';
 import ContentsNext from '~/components/contents/Next';
 import ContentsConcept from '~/components/contents/Concept';
@@ -69,6 +67,7 @@ import ContentsNotes from '~/components/contents/Notes';
 
 export default {
   components: {
+    HeadingLogo,
     ContentsContainer,
     ContentsNext,
     ContentsConcept,
@@ -112,8 +111,12 @@ export default {
       top: 460px;
     }
 
-    > img {
+    /deep/ svg {
       filter: drop-shadow(0px 0px 2px rgba(color(background, white), .2));
+
+      @include dark {
+        filter: drop-shadow(0px 0px 2px rgba(color(background, dark-gray), .8));
+      }
     }
   }
 

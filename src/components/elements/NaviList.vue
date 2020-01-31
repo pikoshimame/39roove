@@ -83,10 +83,14 @@ export default {
 
 <style lang="scss" scoped>
 .navi-list {
-  background-color: color(background, extra-dark-gray);
+  background-color: color(background, dark-gray);
   font-family: $font-primary;
   font-size: 2.0rem;
   padding: 72px 24px 24px;
+
+  @include dark {
+    background-color: color(background, extra-dark-gray);
+  }
 
   > .item {
     & + .item {

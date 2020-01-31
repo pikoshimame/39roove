@@ -20,6 +20,10 @@
     @include retina-background-image('~assets/images/illust-s', 'png');
     background-size: 583px 635px;
 
+    @include dark {
+      filter: drop-shadow(0px 0px 10px rgba(color(background, white), .05));
+    }
+
     @include mq(large) {
       @include retina-background-image('~assets/images/illust-l', 'png');
       background-size: 900px 680px;

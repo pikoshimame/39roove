@@ -96,7 +96,7 @@ export default {
 
   .contents {
     position: relative;
-    background-color: color(background, extra-dark-gray);
+    background-color: color(background, dark-gray);
     margin: 0 auto;
     max-width: 640px;
     min-width: 296px;

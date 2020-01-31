@@ -1,20 +1,19 @@
 <template>
   <div class="main-container">
     <h1 class="logo">
-      <img
-        src="~/assets/images/logo.svg"
-        alt="39roove"
-      >
+      <heading-logo />
     </h1>
     <error-code :status-code="statusCode" />
   </div>
 </template>
 
 <script>
+import HeadingLogo from '~/components/elements/HeadingLogo';
 import ErrorCode from '~/components/elements/ErrorCode';
 
 export default {
   components: {
+    HeadingLogo,
     ErrorCode
   },
   props: {
@@ -57,8 +56,12 @@ export default {
       top: 460px;
     }
 
-    > img {
+    /deep/ svg {
       filter: drop-shadow(0px 0px 2px rgba(color(background, white), .2));
+
+      @include dark {
+        filter: drop-shadow(0px 0px 2px rgba(color(background, dark-gray), .8));
+      }
     }
   }
 }

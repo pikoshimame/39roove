@@ -45,6 +45,10 @@ export default {
     text-align: left;
     line-height: 2;
 
+    @include dark {
+      color: color(text, white);
+    }
+
     @include mq(medium) {
       font-size: 1.6rem;
     }

@@ -30,10 +30,16 @@ export default {
 .error-code {
   position: relative;
   background-color: rgba(color(background, white), .6);
+  color: color(text, black);
   text-align: center;
   height: 100vh;
   padding-top: 144px;
   z-index: 1;
+
+  @include dark {
+    background-color: rgba(color(background, dark-gray), .6);
+    color: color(text, white);
+  }
 
   > .code {
     font-size: 7.2rem;

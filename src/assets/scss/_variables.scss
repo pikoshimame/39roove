@@ -1,6 +1,8 @@
+// カラー
 $color-primary: #fe528c;
 $color-secondary: #b89031;
 $color-black: #000;
+$color-gray-1: #111;
 $color-gray-2: #252525;
 $color-gray-14: #e4e4e4;
 $color-white: #fff;
@@ -8,7 +10,8 @@ $color-white: #fff;
 $colors: (
   background: (
     black: $color-black,
-    extra-dark-gray: $color-gray-2,
+    extra-dark-gray: $color-gray-1,
+    dark-gray: $color-gray-2,
     white: $color-gray-14
   ),
   text: (
@@ -30,7 +33,14 @@ $colors: (
   }
   @return $map;
 }
+// ダークモード
+@mixin dark {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
 
+// フォント
 $font-primary: 'Alata', sans-serif;
 $font-secondary: 'Noto Sans JP', sans-serif;
 

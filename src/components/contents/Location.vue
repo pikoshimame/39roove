@@ -57,6 +57,10 @@ export default {
     line-height: 1.4;
     transition: opacity .2s;
 
+    @include dark {
+      color: color(text, white);
+    }
+
     &:hover {
       opacity: .7;
     }

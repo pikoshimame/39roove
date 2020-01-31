@@ -59,6 +59,10 @@ export default {
   cursor: pointer;
   outline: none;
 
+  @include dark {
+    color: color(text, white);
+  }
+
   &:hover {
     > .img {
       > img {
@@ -70,6 +74,10 @@ export default {
 
   > .img {
     background-color: color(background, white);
+
+    @include dark {
+      background-color: color(background, dark-gray);
+    }
 
     > img {
       display: block;
@@ -84,6 +92,10 @@ export default {
     right: 0;
     bottom: -12px;
     filter: drop-shadow(0px 0px 5px color(background, white));
+
+    @include dark {
+      filter: drop-shadow(0px 0px 5px color(background, dark-gray));
+    }
   }
 }
 </style>

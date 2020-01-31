@@ -38,13 +38,17 @@ export default {
 .main-footer {
   position: relative;
   z-index: 0;
-  background-color: color(background, extra-dark-gray);
+  background-color: color(background, dark-gray);
   color: color(text, white);
   font-size: 12px;
   font-family: $font-primary;
   text-align: center;
   padding-bottom: 24px;
   pointer-events: none;
+
+  @include dark {
+    background-color: color(background, extra-dark-gray);
+  }
 
   > .container {
     display: inline-flex;
