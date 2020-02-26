@@ -8,6 +8,7 @@ export const actions = {
     promises.push(dispatch('discountTweet/fetch'));
     promises.push(dispatch('illustrations/fetch'));
     promises.push(dispatch('copyright/fetch'));
+    promises.push(dispatch('notice/fetch'));
     await Promise.all(promises);
   }
 };

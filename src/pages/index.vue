@@ -1,56 +1,61 @@
 <template>
-  <div class="main-container">
-    <h1 class="logo">
-      <heading-logo />
-    </h1>
-    <div v-observe-visibility="visibilityChanged">
-      <contents-container
-        id="next"
-        class="next"
-        :is-dark="true"
-      >
-        <contents-next />
-      </contents-container>
-      <contents-container
-        id="concept"
-        class="concept"
-        :is-clear="true"
-      >
-        <contents-concept />
-      </contents-container>
-      <contents-container
-        id="entrancefee"
-        class="entrancefee"
-        :is-dark="true"
-      >
-        <contents-entrance-fee />
-      </contents-container>
-      <contents-container
-        id="location"
-        class="location"
-      >
-        <contents-location />
-      </contents-container>
-      <contents-container
-        id="timetable"
-        class="timetable"
-        :is-dark="true"
-      >
-        <contents-time-table />
-      </contents-container>
-      <contents-container
-        id="residentcrew"
-        class="residentcrew"
-      >
-        <contents-resident-crew />
-      </contents-container>
-      <contents-container
-        class="notes"
-        :is-dark="true"
-      >
-        <contents-notes />
-      </contents-container>
+  <div>
+    <div class="main-container">
+      <h1 class="logo">
+        <heading-logo />
+      </h1>
+      <div v-observe-visibility="visibilityChanged">
+        <contents-container
+          id="next"
+          class="next"
+          :is-dark="true"
+        >
+          <contents-next />
+        </contents-container>
+        <contents-container
+          id="concept"
+          class="concept"
+          :is-clear="true"
+        >
+          <contents-concept />
+        </contents-container>
+        <contents-container
+          id="entrancefee"
+          class="entrancefee"
+          :is-dark="true"
+        >
+          <contents-entrance-fee />
+        </contents-container>
+        <contents-container
+          id="location"
+          class="location"
+        >
+          <contents-location />
+        </contents-container>
+        <contents-container
+          id="timetable"
+          class="timetable"
+          :is-dark="true"
+        >
+          <contents-time-table />
+        </contents-container>
+        <contents-container
+          id="residentcrew"
+          class="residentcrew"
+        >
+          <contents-resident-crew />
+        </contents-container>
+        <contents-container
+          class="notes"
+          :is-dark="true"
+        >
+          <contents-notes />
+        </contents-container>
+      </div>
     </div>
+    <notice-modal
+      v-if="noticeExists"
+    />
   </div>
 </template>
 
@@ -64,6 +69,7 @@ import ContentsLocation from '~/components/contents/Location';
 import ContentsTimeTable from '~/components/contents/TimeTable';
 import ContentsResidentCrew from '~/components/contents/ResidentCrew';
 import ContentsNotes from '~/components/contents/Notes';
+import NoticeModal from '~/components/elements/NoticeModal';
 
 export default {
   components: {
@@ -75,7 +81,13 @@ export default {
     ContentsLocation,
     ContentsTimeTable,
     ContentsResidentCrew,
-    ContentsNotes
+    ContentsNotes,
+    NoticeModal
+  },
+  computed: {
+    noticeExists() {
+      return this.$store.getters['notice/isExists'];
+    }
   },
   methods: {
     visibilityChanged(visibility) {
