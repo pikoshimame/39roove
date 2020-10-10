@@ -21,16 +21,6 @@ export default {
           term: '通常',
           fee: '￥2,000',
           drink: '￥600'
-        },
-        {
-          term: 'Twitter割引',
-          fee: '￥1,500',
-          drink: '￥600'
-        },
-        {
-          term: '未成年割引',
-          fee: '￥1,000',
-          drink: '￥600'
         }
       ]
     };
