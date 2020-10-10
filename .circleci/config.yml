@@ -24,7 +24,7 @@ jobs:
 
       - run: npm run setup
 
-      - run: ./node_modules/.bin/firebase use default
+      - run: ./node_modules/.bin/firebase use default --token "$FIREBASE_TOKEN"
 
       - run: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
 
