@@ -3,9 +3,6 @@
     class="main-footer"
   >
     <div class="container">
-      <div class="button">
-        <discount-tweet ga-label="footer" />
-      </div>
       <small
         v-if="illustrations !== ''"
         class="illustrations"
@@ -16,13 +13,8 @@
 </template>
 
 <script>
-import DiscountTweet from '~/components/elements/DiscountTweet';
-
 export default {
   name: 'MainFooter',
-  components: {
-    DiscountTweet
-  },
   computed: {
     illustrations() {
       return this.$store.state.illustrations.text;
