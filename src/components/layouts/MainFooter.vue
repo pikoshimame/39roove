@@ -35,7 +35,7 @@ export default {
   font-size: 12px;
   font-family: $font-primary;
   text-align: center;
-  padding-bottom: 24px;
+  padding-bottom: 104px;
   pointer-events: none;
 
   @include dark {
