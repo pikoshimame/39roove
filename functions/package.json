@@ -4,7 +4,7 @@
   "description": "39roove オフィシャルサイト",
   "author": "pikoshimame <pikoshimame@gmail.com>",
   "engines": {
-    "node": "8"
+    "node": "10"
   },
   "private": true,
   "dependencies": {
