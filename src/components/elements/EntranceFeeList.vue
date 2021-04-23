@@ -6,7 +6,7 @@
       class="item"
     >
       <dt>{{ entranceFee.term }}</dt>
-      <dd>{{ entranceFee.fee }} <span>(+1Drink {{ entranceFee.drink }})</span></dd>
+      <dd>{{ entranceFee.fee }} <!--<span>(+1Drink {{ entranceFee.drink }})</span--></dd>
     </div>
   </dl>
 </template>
@@ -18,9 +18,9 @@ export default {
     return {
       entrancefeeList: [
         {
-          term: '通常',
-          fee: '￥2,000',
-          drink: '￥600'
+          term: '',
+          fee: 'coming soon...',
+          drink: ''
         }
       ]
     };
