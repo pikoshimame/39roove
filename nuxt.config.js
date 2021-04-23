@@ -121,5 +121,11 @@ export default {
         handler: 'staleWhileRevalidate'
       }
     ]
+  },
+  pwa: {
+    manifest: {
+      name: '39roove',
+      lang: 'ja'
+    }
   }
 };
