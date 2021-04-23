@@ -31,7 +31,6 @@ export default {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon-180x180.png'},
       {rel: 'icon', type: 'image/png', sizes: '192x192', href: '/android-chrome-192x192.png'},
-      {rel: 'manifest', href: '/manifest.json'},
       {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Alata|Noto+Sans+JP:500,700&display=swap'},
     ]
   },
@@ -122,10 +121,18 @@ export default {
       }
     ]
   },
-  pwa: {
-    manifest: {
-      name: '39roove',
-      lang: 'ja'
-    }
+  manifest: {
+    'start_url': '/?standalone=true',
+    'lang': 'ja',
+    'orientation': 'any',
+    'background_color': '#fff',
+    'theme_color': '#fff',
+    'icons': [
+      {
+        'src': '/android-chrome-192x192.png',
+        'sizes': '192x192',
+        'type': 'image/png'
+      }
+    ]
   }
 };
