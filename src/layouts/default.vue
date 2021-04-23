@@ -3,7 +3,6 @@
     <global-navi />
     <nuxt />
     <main-footer />
-    <join-contents />
     <modal-contents />
   </div>
 </template>
@@ -11,14 +10,12 @@
 <script>
 import GlobalNavi from '~/components/layouts/GlobalNavi';
 import MainFooter from '~/components/layouts/MainFooter';
-import JoinContents from '~/components/layouts/JoinContents';
 import ModalContents from '~/components/layouts/ModalContents';
 
 export default {
   components: {
     GlobalNavi,
     MainFooter,
-    JoinContents,
     ModalContents
   }
 };
