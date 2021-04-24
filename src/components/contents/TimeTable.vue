@@ -5,8 +5,15 @@
       class="heading"
     />
     <time-table-list
+      v-if="existsTimeTable"
       :time-table="timeTable"
     />
+    <p
+      v-else
+      class="text"
+    >
+      coming soon...
+    </p>
   </div>
 </template>
 
@@ -24,6 +31,9 @@ export default {
     timeTable() {
       return this.$store.getters['timeTable/timeTableHtml'];
     },
+    existsTimeTable() {
+      return this.timeTable.main !== '' || this.timeTable.lounge !== '';
+    }
   }
 };
 </script>
@@ -32,6 +42,12 @@ export default {
 .contents-timetable {
   > .heading {
     padding-bottom: 40px;
+  }
+
+  > .text {
+    color: color(text, white);
+    font-size: 1.4rem;
+    opacity: .5;
   }
 }
 </style>
