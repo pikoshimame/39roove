@@ -6,18 +6,18 @@
     />
     <a
       class="location"
-      :href="locationLink"
+      :href="link"
       target="_blank"
       rel="noopener"
     >
       <link-text
-        text="秋葉原 MOGRA"
+        :text="name"
       />
     </a>
     <iframe
-      title="秋葉原 MOGRA マップ"
+      :title="`${name} マップ`"
       class="map"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.980625594005!2d139.77279191525938!3d35.70209438018946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ea71928307d%3A0xe49b9244dc37e180!2z56eL6JGJ5Y6fIE1PR1JB!5e0!3m2!1sja!2sjp!4v1619144881987!5m2!1sja!2sjp"
+      :src="`https://maps.google.co.jp/maps?ll=${lat},${lon}&q=${name}&output=embed&t=m&z=16`"
       width="100%"
       height="320"
       frameborder="0"
@@ -37,10 +37,19 @@ export default {
     ContentsHeading,
     LinkText
   },
-  data() {
-    return {
-      locationLink: 'https://club-mogra.jp/'
-    };
+  computed: {
+    name() {
+      return this.$store.state.location.name;
+    },
+    lat() {
+      return this.$store.state.location.lat;
+    },
+    lon() {
+      return this.$store.state.location.lon;
+    },
+    link() {
+      return this.$store.state.location.link;
+    }
   }
 };
 </script>
