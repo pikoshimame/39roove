@@ -1,12 +1,12 @@
 <template>
   <dl class="entrancefee-list">
     <div
-      v-for="(entranceFee, index) in entrancefeeList"
+      v-for="(entranceFee, index) in entranceFees"
       :key="index"
       class="item"
     >
       <dt>{{ entranceFee.term }}</dt>
-      <dd>{{ entranceFee.fee }} <!--<span>(+1Drink {{ entranceFee.drink }})</span--></dd>
+      <dd>{{ entranceFee.fee }} <span>({{ entranceFee.drink }})</span></dd>
     </div>
   </dl>
 </template>
@@ -14,16 +14,11 @@
 <script>
 export default {
   name: 'EntranceFeeList',
-  data() {
-    return {
-      entrancefeeList: [
-        {
-          term: '',
-          fee: 'coming soon...',
-          drink: ''
-        }
-      ]
-    };
+  props: {
+    entranceFees: {
+      type: Array,
+      required: true
+    }
   }
 };
 </script>

@@ -4,7 +4,16 @@
       text="Entrance Fee"
       class="heading"
     />
-    <entrance-fee-list />
+    <entrance-fee-list
+      v-if="entranceFees.length !== 0"
+      :entrance-fees="entranceFees"
+    />
+    <p
+      v-else
+      class="text"
+    >
+      coming soon...
+    </p>
   </div>
 </template>
 
@@ -17,6 +26,11 @@ export default {
   components: {
     ContentsHeading,
     EntranceFeeList
+  },
+  computed: {
+    entranceFees() {
+      return this.$store.state.entranceFees.list;
+    }
   }
 };
 </script>
@@ -29,6 +43,12 @@ export default {
 
   > .button {
     padding-top: 40px;
+  }
+
+  > .text {
+    color: color(text, white);
+    font-size: 1.4rem;
+    opacity: .5;
   }
 }
 </style>
