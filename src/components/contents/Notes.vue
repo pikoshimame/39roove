@@ -5,7 +5,7 @@
       :key="index"
       class="item"
     >
-      <span>{{ notes }}</span>
+      <span>{{ notes.text }}</span>
     </li>
   </ul>
 </template>
@@ -13,15 +13,10 @@
 <script>
 export default {
   name: 'Notes',
-  data() {
-    return {
-      notesList: [
-        '未成年者の飲酒、喫煙は固くお断りします。',
-        '飲食物の持ち込みは禁止させて頂いております。',
-        '他のお客様のご迷惑となる行為、過度なナンパ行為等は禁止させて頂いております。場合によっては、退場して頂く場合がございます。',
-        '貴重品は自己管理でお願いいたします。万が一紛失された場合、こちらでは責任を負いかねますのでご注意下さい。'
-      ]
-    };
+  computed: {
+    notesList() {
+      return this.$store.state.notes.list;
+    }
   }
 };
 </script>
