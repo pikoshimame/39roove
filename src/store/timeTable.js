@@ -36,8 +36,8 @@ export const actions = {
       };
       const response = await client.getEntries(config);
       const timetable = response.items.map((entry) => {
-        const main = entry.fields['mainFloor'];
-        const lounge = entry.fields['loungeFloor'];
+        const main = entry.fields['mainFloor'] || '';
+        const lounge = entry.fields['loungeFloor'] || '';
         return {
           main,
           lounge

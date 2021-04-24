@@ -1,7 +1,10 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <div class="timetable-contents">
-    <h3 class="heading">
+    <h3
+      v-if="title !== ''"
+      class="heading"
+    >
       {{ title }}
     </h3>
     <div

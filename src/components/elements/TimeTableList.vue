@@ -1,12 +1,17 @@
 <template>
   <div class="timetable-list">
-    <div class="item">
+    <div
+      class="item"
+    >
       <time-table-contents
-        title="Main Floor"
+        :title="mainFloorTitle"
         :time-table="timeTable.main"
       />
     </div>
-    <div class="item">
+    <div
+      v-if="timeTable.lounge !== ''"
+      class="item"
+    >
       <time-table-contents
         title="Lounge Floor"
         :time-table="timeTable.lounge"
@@ -27,6 +32,11 @@ export default {
     timeTable: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    mainFloorTitle() {
+      return this.timeTable.lounge !== '' ? 'Main Floor' : '';
     }
   }
 };
