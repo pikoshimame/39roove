@@ -4,6 +4,7 @@ export const actions = {
     promises.push(dispatch('next/fetch'));
     promises.push(dispatch('guests/fetch'));
     promises.push(dispatch('residents/fetch'));
+    promises.push(dispatch('entranceFees/fetch'));
     promises.push(dispatch('location/fetch'));
     promises.push(dispatch('timeTable/fetch'));
     promises.push(dispatch('discountTweet/fetch'));
