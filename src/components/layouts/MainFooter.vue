@@ -3,6 +3,12 @@
     class="main-footer"
   >
     <div class="container">
+      <div
+        v-if="existsDiscountTweet"
+        class="button"
+      >
+        <discount-tweet ga-label="footer" />
+      </div>
       <small
         v-if="illustrations !== ''"
         class="illustrations"
@@ -13,9 +19,17 @@
 </template>
 
 <script>
+import DiscountTweet from '~/components/elements/DiscountTweet';
+
 export default {
   name: 'MainFooter',
+  components: {
+    DiscountTweet
+  },
   computed: {
+    existsDiscountTweet() {
+      return this.$store.getters['discountTweet/existsDiscountTweet'];
+    },
     illustrations() {
       return this.$store.state.illustrations.text;
     },

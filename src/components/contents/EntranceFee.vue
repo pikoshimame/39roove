@@ -4,10 +4,19 @@
       text="Entrance Fee"
       class="heading"
     />
-    <entrance-fee-list
+    <template
       v-if="entranceFees.length !== 0"
-      :entrance-fees="entranceFees"
-    />
+    >
+      <entrance-fee-list
+        :entrance-fees="entranceFees"
+      />
+      <div
+        v-if="existsDiscountTweet"
+        class="button"
+      >
+        <discount-tweet ga-label="entrancefee" />
+      </div>
+    </template>
     <p
       v-else
       class="text"
@@ -20,16 +29,21 @@
 <script>
 import ContentsHeading from '~/components/elements/ContentsHeading';
 import EntranceFeeList from '~/components/elements/EntranceFeeList';
+import DiscountTweet from '~/components/elements/DiscountTweet';
 
 export default {
   name: 'EntranceFee',
   components: {
     ContentsHeading,
-    EntranceFeeList
+    EntranceFeeList,
+    DiscountTweet
   },
   computed: {
     entranceFees() {
       return this.$store.state.entranceFees.list;
+    },
+    existsDiscountTweet() {
+      return this.$store.getters['discountTweet/existsDiscountTweet'];
     }
   }
 };

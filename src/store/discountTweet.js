@@ -6,6 +6,12 @@ export const state = () => ({
   hashtags: ''
 });
 
+export const getters = {
+  existsDiscountTweet(state) {
+    return state.text !== '' && state.hashtags !== '';
+  }
+};
+
 export const mutations = {
   setDiscountTweet(state, {text, hashtags}) {
     state.text = text;
