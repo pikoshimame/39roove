@@ -12,6 +12,7 @@ export const actions = {
     promises.push(dispatch('illustrations/fetch'));
     promises.push(dispatch('copyright/fetch'));
     promises.push(dispatch('notice/fetch'));
+    promises.push(dispatch('registration/fetch'));
     await Promise.all(promises);
   }
 };
