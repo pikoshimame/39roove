@@ -3,6 +3,7 @@
     <global-navi />
     <nuxt />
     <main-footer />
+    <registration-contents />
     <modal-contents />
   </div>
 </template>
@@ -10,12 +11,14 @@
 <script>
 import GlobalNavi from '~/components/layouts/GlobalNavi';
 import MainFooter from '~/components/layouts/MainFooter';
+import RegistrationContents from '~/components/layouts/RegistrationContents';
 import ModalContents from '~/components/layouts/ModalContents';
 
 export default {
   components: {
     GlobalNavi,
     MainFooter,
+    RegistrationContents,
     ModalContents
   }
 };

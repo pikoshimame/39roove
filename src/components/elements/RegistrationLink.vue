@@ -1,7 +1,7 @@
 <template>
   <a
-    class="join-link"
-    :href="joinLink"
+    class="registration-link"
+    :href="link"
     target="_blank"
     rel="noopener"
   >
@@ -15,7 +15,7 @@
 import LinkText from '~/components/elements/LinkText';
 
 export default {
-  name: 'JoinLink',
+  name: 'RegistrationLink',
   components: {
     LinkText
   },
@@ -23,18 +23,17 @@ export default {
     text: {
       type: String,
       required: true
+    },
+    link: {
+      type: String,
+      required: true
     }
-  },
-  data() {
-    return {
-      joinLink: 'https://twipla.jp/events/462500'
-    };
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.join-link {
+.registration-link {
   color: color(text, white);
   font-size: 2.4rem;
   line-height: 1.5;

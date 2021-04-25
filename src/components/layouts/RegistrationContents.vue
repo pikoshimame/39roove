@@ -1,22 +1,39 @@
 <template>
-  <div class="join-contents">
-    <join-link text="参加登録はこちら" />
+  <div
+    v-if="existsRegistration"
+    class="registration-contents"
+  >
+    <registration-link
+      :text="text"
+      :link="link"
+    />
   </div>
 </template>
 
 <script>
-import JoinLink from '~/components/elements/JoinLink';
+import RegistrationLink from '~/components/elements/RegistrationLink';
 
 export default {
-  name: 'JoinContents',
+  name: 'RegistrationContents',
   components: {
-    JoinLink
+    RegistrationLink
+  },
+  computed: {
+    existsRegistration() {
+      return this.$store.getters['registration/existsRegistration'];
+    },
+    text() {
+      return this.$store.state.registration.text;
+    },
+    link() {
+      return this.$store.state.registration.link;
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.join-contents {
+.registration-contents {
   position: fixed;
   bottom: 0;
   display: flex;
