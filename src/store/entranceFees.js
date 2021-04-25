@@ -22,7 +22,7 @@ export const actions = {
       const entranceFees = response.items.map((entry) => {
         const term = entry.fields['term'];
         const fee = entry.fields['fee'];
-        const drink = entry.fields['drink'];
+        const drink = entry.fields['drink'] || '';
         return {
           term,
           fee,
