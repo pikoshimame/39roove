@@ -1,43 +1,43 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
-  <ul class="notes-list">
-    <li
-      v-for="(notes, index) in notesList"
-      :key="index"
-      class="item"
-    >
-      <span>{{ notes.text }}</span>
-    </li>
-  </ul>
+  <div
+    class="notes-list"
+    v-html="notes.text"
+  />
 </template>
 
 <script>
 export default {
   name: 'Notes',
   computed: {
-    notesList() {
-      return this.$store.state.notes.list;
-    }
+    notes() {
+      return {
+        text: this.$store.getters['notes/textHtml']
+      };
+    },
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .notes-list {
-  color: color(text, white);
-  font-size: 1.2rem;
-  text-align: left;
-  line-height: 1.5;
+  /deep/ ul {
+    color: color(text, white);
+    font-size: 1.2rem;
+    text-align: left;
+    line-height: 1.5;
 
-  > .item {
-    text-indent: -1em;
-    padding-left: 1em;
+    > li {
+      text-indent: -1em;
+      padding-left: 1em;
 
-    &::before {
-      content: '・';
-    }
+      &::before {
+        content: '・';
+      }
 
-    & + .item {
-      padding-top: 8px;
+      & + li {
+        padding-top: 8px;
+      }
     }
   }
 }

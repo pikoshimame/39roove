@@ -6,7 +6,7 @@
       class="item"
     >
       <dt>{{ entranceFee.term }}</dt>
-      <dd>{{ entranceFee.fee }} <span>({{ entranceFee.drink }})</span></dd>
+      <dd>{{ entranceFee.fee }} <span v-if="entranceFee.drink !== ''">({{ entranceFee.drink }})</span></dd>
     </div>
   </dl>
 </template>
@@ -42,11 +42,18 @@ export default {
       padding-top: 16px;
     }
 
+    > dt {
+      text-align: right;
+    }
+
     > dd {
+      text-align: left;
       padding-left: 12px;
+      min-width: 176px;
 
       @include mq(small) {
         padding-left: 24px;
+        min-width: 208px;
       }
 
       > span {
