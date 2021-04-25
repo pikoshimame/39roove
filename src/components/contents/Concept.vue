@@ -1,21 +1,14 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div class="contents-concept">
     <contents-heading
       text="Concept"
       class="heading"
     />
-    <p class="text -xlarge">
-      <b>VOCALOID × GROOVE</b>
-    </p>
-    <p class="text">
-      39rooveは、ボカロ曲を主軸に、出演者全員でGROOVE（グルーヴ）を作っていくイベントです。
-    </p>
-    <p class="text">
-      知っている大好きなボカロ曲、まだ出会ったことのなかったボカロ曲、そんな曲を聴きながらフロアで一緒にGROOVEを感じてみませんか！？
-    </p>
-    <p class="text -large">
-      <b>GROOVE、それは言葉にできない感覚！</b>
-    </p>
+    <div
+      class="text"
+      v-html="concept.text"
+    />
   </div>
 </template>
 
@@ -26,6 +19,13 @@ export default {
   name: 'Concept',
   components: {
     ContentsHeading
+  },
+  computed: {
+    concept() {
+      return {
+        text: this.$store.getters['concept/textHtml']
+      };
+    },
   }
 };
 </script>
@@ -53,36 +53,38 @@ export default {
       font-size: 1.6rem;
     }
 
-    & + .text {
-      padding-top: 24px;
-    }
-
-    &.-xlarge {
-      font-size: 2.4rem;
-      text-align: center;
-      line-height: 1;
-
-      @include mq(medium) {
-        font-size: 2.8rem;
-      }
-    }
-
-    &.-large {
-      font-size: 1.4rem;
-      text-align: center;
-      line-height: 1;
-
-      @include mq(small) {
-        font-size: 1.6rem;
+    /deep/ p {
+      + p {
+        padding-top: 24px;
       }
 
-      @include mq(medium) {
-        font-size: 2.0rem;
-      }
-    }
+      > strong {
+        display: block;
+        font-size: 2.4rem;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1;
 
-    > b {
-      font-weight: bold;
+        @include mq(medium) {
+          font-size: 2.8rem;
+        }
+      }
+
+      > em {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1;
+
+        @include mq(small) {
+          font-size: 1.6rem;
+        }
+
+        @include mq(medium) {
+          font-size: 2.0rem;
+        }
+      }
     }
   }
 }
