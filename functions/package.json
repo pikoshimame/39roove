@@ -9,7 +9,7 @@
   "private": true,
   "dependencies": {
     "contentful": "^7.11.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "firebase-admin": "^8.9.0",
     "firebase-functions": "^3.3.0",
     "intersection-observer": "^0.7.0",
